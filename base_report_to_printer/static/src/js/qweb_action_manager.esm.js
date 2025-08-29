@@ -3,7 +3,7 @@ import {Markup} from "web.utils";
 import {registry} from "@web/core/registry";
 
 async function cupsReportActionHandler(action, options, env) {
-    if (action.report_type === "qweb-pdf") {
+    if (action.report_type === "qweb-pdf" || action.report_type === "qweb-text") {
         const orm = env.services.orm;
 
         const print_action = await orm.call(
